@@ -1,11 +1,8 @@
 class Vacancy:
-	__slots__ = ...
-
-	def __init__(self, *args, **kwargs):
-		pass
+	__slots__ = ('id', 'url', 'vacancy_name', 'company_name', 'snippet', 'salary')
 
 	def __str__(self):
-		pass
+		return f"Вакансия: {self.vacancy_name} ЗП: {self.salary}, Требования: {self.snippet} Ссылка {self.url}"
 
 
 class CountMixin:
