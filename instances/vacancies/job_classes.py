@@ -4,17 +4,13 @@ class Vacancy:
 	def __str__(self):
 		return f"Вакансия: {self.vacancy_name} ЗП: {self.salary}, Требования: {self.snippet} Ссылка {self.url}"
 
-
-class CountMixin:
-
-	@property
-	def get_count_of_vacancy(self):
-		"""
-		Вернуть количество вакансий от текущего сервиса.
-		Получать количество необходимо динамически из файла.
-		"""
-		pass
-
-
-
-
+#
+# class CountMixin:
+#
+# 	@property
+# 	def get_count_of_vacancy(self):
+# 		"""
+# 		Вернуть количество вакансий от текущего сервиса.
+# 		Получать количество необходимо динамически из файла.
+# 		"""
+# 		pass

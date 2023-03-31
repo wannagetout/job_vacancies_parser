@@ -45,11 +45,11 @@ class HH(Engine):
 			vacancies_list.append(vacancy_entity)
 		return vacancies_list
 
-
-hh = HH()
-vacanciess = hh.get_entities_list()
-for v in vacanciess:
-	print(v)
+#
+# hh = HH()
+# vacanciess = hh.get_entities_list()
+# for v in vacanciess:
+# 	print(v)
 
 # vacancy_id = 0
 # vacancies_mapping = []

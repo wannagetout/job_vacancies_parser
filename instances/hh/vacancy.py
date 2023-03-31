@@ -6,7 +6,7 @@ from utils.utils import delete_tags
 class HHVacancy(Vacancy):  # add counter mixin
 	""" HeadHunter Vacancy """
 
-	def __init__(self, data):
+	def __init__(self, data: dict):
 		super().__init__()
 		self.id = data['id']
 		self.url = data['alternate_url']
