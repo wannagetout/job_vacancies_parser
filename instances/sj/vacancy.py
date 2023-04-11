@@ -1,4 +1,4 @@
-from instances.base.job_classes import Vacancy
+from instances.vacancies.job_classes import Vacancy
 
 
 class SJVacancy(Vacancy):  # add counter mixin
