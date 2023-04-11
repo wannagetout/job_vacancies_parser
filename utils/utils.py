@@ -4,9 +4,9 @@ import json
 
 def sorting(vacancy_json):
 	""" Должен сортировать любой список вакансий по ежемесячной оплате (gt, lt magic methods) """
-	vac_list = vacancy_json["items"]
+	vac_list = vacancy_json
 	vac_sorted = sorted(
-		vac_list, key=lambda vacancy: vacancy["vacancy"]["salary"], reverse=True
+		vac_list, key=lambda vacancy: vacancy["salary"], reverse=True
 	)
 	return {"items": vac_sorted}
 
@@ -20,4 +20,4 @@ def get_top(name):
 
 
 def delete_tags(text: str):
-	return re.sub(r"<[^>]+>", "", text, flags=re.S)
+	return re.sub(r"<[^>]+>", "", str(text), flags=re.S)
