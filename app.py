@@ -5,9 +5,9 @@ from utils import utils
 
 if __name__ == '__main__':
     keyword = input("Введите ключевую фразу для поиска:")
-    file = Connector()
-    hh = HH()
-    file.insert(hh.get_json_from_request())
+    file = Connector(filename=f'{keyword}.json')
+    hh = HH(keyword)
+    file.insert(data=hh.get_json(), datafile=file.data_file)
     print(
         f"Загружено 1000 вакансий в файл {keyword}.json:\n"
         "Нажмите 1 для просмотра топ 10 вакансий по зарплате\n"
@@ -21,10 +21,10 @@ if __name__ == '__main__':
             top_10 = utils.get_top(keyword)
             for item in top_10:
                 print(
-                    f'Вакансия: {item["vacancy"]["name"]}\n'
-                    f'Зарплата: {item["vacancy"]["salary"]}\n'
-                    f'Описание: {item["vacancy"]["description"]}\n'
-                    f'Ссылка: {item["vacancy"]["url"]}\n'
+                    f'Вакансия: {item["vacancy_name"]}\n'
+                    f'Зарплата: {item["salary"]}\n'
+                    f'Описание: {item["snippet"]}\n'
+                    f'Ссылка: {item["url"]}\n'
                 )
         if user_input == 2:
             request_field = input("Введите поле для поиска:")
@@ -34,17 +34,15 @@ if __name__ == '__main__':
             answer = file.select({request_field: request_value})
             for item in answer:
                 print(
-                    f'Вакансия: {item["vacancy"]["name"]}\n'
-                    f'Зарплата: {item["vacancy"]["salary"]}\n'
-                    f'Описание: {item["vacancy"]["description"]}\n'
-                    f'Ссылка: {item["vacancy"]["url"]}\n'
+                    f'Вакансия: {item["vacancy_name"]}\n'
+                    f'Зарплата: {item["salary"]}\n'
+                    f'Описание: {item["snippet"]}\n'
+                    f'Ссылка: {item["url"]}\n'
                 )
         if user_input == 3:
             request = input("Введите запрос(dict):")
             key = request.partition(":")[0]
             value = request.partition(":")[2]
-            key = key[2: len(key) - 1]
-            value = value[0: len(key) - 1]
             answer = file.delete({key: int(value)})
         if user_input == 4:
             break
