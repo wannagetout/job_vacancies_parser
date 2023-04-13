@@ -1,5 +1,4 @@
 from instances.base.engine_classes import Engine
-from instances.hh.vacancy import HHVacancy
 from requests import request
 
 from instances.vacancies.job_classes import Vacancy
