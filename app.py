@@ -11,6 +11,7 @@ if __name__ == '__main__':
     sj = SuperJob(keyword)
     file.insert(data=hh.get_json(), datafile=file.data_file)
     file.insert(data=sj.get_json(), datafile=file.data_file)
+
     print(
         f"Загружено 1000 вакансий в файл {keyword}.json:\n"
         "Нажмите 1 для просмотра топ 10 вакансий по зарплате\n"
